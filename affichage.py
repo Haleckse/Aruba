@@ -137,15 +137,33 @@ def display(titre, grille, tour_joueur):
     print('Joueur ' + tour_joueur + ', veuillez jouer')
 
 
+def saisir_coordonnees () : 
+    
+    pion_a_bouger = input ('Veuillez saisir les coordonnées du pion à bouger :  ')
+    assert est_au_bon_format(pion_a_bouger), "Erreur, le coup joué n'est pas au bon format"
+    assert est_dans_grille(pion_a_bouger[0], pion_a_bouger[1]), "Erreur, le coup joué n'est pas dans la grille"
+    
+    position_joue = input ('Veuillez saisir les coordonnées de la position à jouer :  ')
+    assert est_au_bon_format(position_joue), "Erreur, le coup joué n'est pas au bon format"
+    assert est_dans_grille(position_joue[0], position_joue[1]), "Erreur, le coup joué n'est pas dans la grille"
+    
+    print()
+    
+
 # ---- Code principal ----
 
 # Affichage des différentes étapes du jeu
+
 display('début', grille_debut, 'blanc')
+input("Tapez entrer pour passer à la configuration suivante ")
+
 display('milieu', grille_milieu, 'noir')
+input("Tapez entrer pour passer à la configuration suivante ")
+
 display('fin', grille_fin, 'noir')
+saisir_coordonnees()
 
 # Exécution des tests
 test_est_dans_grille()
 test_est_au_bon_format()
 
-# print(saisir_coordonnees())  # Fonction non implémentée pour l’instant
