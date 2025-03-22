@@ -149,6 +149,8 @@ def saisir_coordonnees () :
     
     print()
     
+    return ((pion_a_bouger, position_joue))
+    
 
 # ---- Code principal ----
 
